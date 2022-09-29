@@ -9,6 +9,7 @@ import { StrivePage } from './pages/StrivePage';
 import {
   CountriesPage,
   EntitiesPage,
+  EntityTypesPage,
   OptionSetsPage,
   PermissionGroupsPage,
   PermissionsPage,
@@ -175,6 +176,11 @@ export const ROUTES = [
         label: 'Countries',
         to: '/countries',
         component: CountriesPage,
+      },
+      {
+        label: 'Entity Types',
+        to: '/entityTypes',
+        component: EntityTypesPage,
       },
     ],
   },
