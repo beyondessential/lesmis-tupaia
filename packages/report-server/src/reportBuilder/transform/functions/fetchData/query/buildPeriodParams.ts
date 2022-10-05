@@ -12,8 +12,8 @@ import {
   utcMoment,
 } from '@tupaia/utils';
 
-import { FetchReportQuery, PeriodParams, ReportConfig } from '../../types';
-import { DateOffset } from './types';
+import { FetchReportQuery, PeriodParams } from '../../../../../types';
+import { FetchConfig, DateOffset } from '../types';
 
 const buildDateUsingSpecs = (date: string | undefined, dateOffset: DateOffset) => {
   const { from } = dateOffset;
@@ -29,10 +29,10 @@ const matchesOriginalQuery = (subQuery: Record<string, unknown>, originalQuery: 
 
 export const buildPeriodParams = (
   query: FetchReportQuery,
-  config: ReportConfig,
+  config: FetchConfig,
 ): Required<PeriodParams> => {
   let { period = getDefaultPeriod(), startDate, endDate } = query;
-  const { startDate: startDateSpecs, endDate: endDateSpecs } = config.fetch;
+  const { startDate: startDateSpecs, endDate: endDateSpecs } = config;
 
   // Use specific date if date specs is string
   if (typeof startDateSpecs === 'string') {
