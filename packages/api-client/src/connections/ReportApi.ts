@@ -12,10 +12,6 @@ export class ReportApi extends BaseApi {
     return this.connection.post('testReport', query, body);
   }
 
-  public async fetchAggregationOptions() {
-    return this.connection.get('fetchAggregationOptions');
-  }
-
   public async fetchTransformSchemas() {
     return this.connection.get('fetchTransformSchemas');
   }

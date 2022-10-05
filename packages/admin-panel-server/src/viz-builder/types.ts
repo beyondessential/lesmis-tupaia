@@ -6,11 +6,6 @@
 import { ReportConfig, StandardOrCustomReportConfig } from '@tupaia/report-server';
 
 export type VizData = {
-  dataElements: ReportConfig['fetch']['dataElements'];
-  dataGroups: ReportConfig['fetch']['dataGroups'];
-  startDate?: ReportConfig['fetch']['startDate'];
-  endDate?: ReportConfig['fetch']['endDate'];
-  aggregations: ReportConfig['fetch']['aggregations'];
   transform: ReportConfig['transform'];
 };
 
