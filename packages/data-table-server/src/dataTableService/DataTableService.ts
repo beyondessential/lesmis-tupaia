@@ -5,10 +5,11 @@
 
 import { TupaiaApiClient } from '@tupaia/api-client';
 import { yup } from '@tupaia/utils';
+import { DataTableParameter } from './types';
 
 export abstract class DataTableService<
-  ParamsSchema extends yup.AnySchema = yup.AnySchema,
-  ConfigSchema extends yup.AnySchema = yup.AnySchema,
+  ParamsSchema extends yup.AnyObjectSchema = yup.AnyObjectSchema,
+  ConfigSchema extends yup.AnyObjectSchema = yup.AnyObjectSchema,
   RecordSchema = unknown
 > {
   protected readonly paramsSchema: ParamsSchema;
@@ -41,4 +42,6 @@ export abstract class DataTableService<
     const validatedParams = this.validateParams(params);
     return this.pullData(validatedParams);
   }
+
+  public abstract getParameters(): DataTableParameter[];
 }
